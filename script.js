@@ -177,26 +177,4 @@
       submitButton.textContent = currentMode === "new" ? "Submit RSVP" : "Update RSVP";
     }
   });
-
-  $("share-button").addEventListener("click", async () => {
-    const url = window.location.href.split("#")[0];
-    const message = `You're warmly invited to Vijender & Mounika's cradle ceremony on Saturday, November 21, 2026 at 6:00 PM in Peoria, Arizona.\nPlease RSVP here: ${url}`;
-    const wa = `https://wa.me/?text=${encodeURIComponent(message)}`;
-    window.open(wa, "_blank", "noopener");
-  });
-
-  function updateCountdown() {
-    const target = new Date(cfg.EVENT_DATE_ISO || "2026-11-21T18:00:00-07:00").getTime();
-    let diff = Math.max(0, target - Date.now());
-    const days = Math.floor(diff / 86400000); diff %= 86400000;
-    const hours = Math.floor(diff / 3600000); diff %= 3600000;
-    const minutes = Math.floor(diff / 60000); diff %= 60000;
-    const seconds = Math.floor(diff / 1000);
-    $("days").textContent = String(days).padStart(2, "0");
-    $("hours").textContent = String(hours).padStart(2, "0");
-    $("minutes").textContent = String(minutes).padStart(2, "0");
-    $("seconds").textContent = String(seconds).padStart(2, "0");
-  }
-  updateCountdown();
-  window.setInterval(updateCountdown, 1000);
 })();
