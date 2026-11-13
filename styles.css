@@ -1,0 +1,115 @@
+ :root {
+  --maroon: #6d251f;
+  --maroon-dark: #4b1917;
+  --gold: #b77b35;
+  --gold-light: #e4c58e;
+  --cream: #fff8ec;
+  --paper: #fffdf8;
+  --ink: #54352c;
+  --muted: #8c7568;
+  --green: #526a46;
+  --line: rgba(183,123,53,.34);
+  --shadow: 0 20px 65px rgba(72,34,20,.12);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(ellipse at 10% 8%, rgba(224,190,128,.24), transparent 32%),
+    radial-gradient(ellipse at 90% 90%, rgba(125,52,37,.09), transparent 35%),
+    #f6eddf;
+  font-family: "DM Sans", sans-serif;
+}
+.page-shell { width: min(100% - 28px, 760px); margin: 0 auto; padding: 22px 0 18px; }
+.top-garland { display:flex; justify-content:space-around; align-items:center; color:var(--gold); font-size:23px; margin:0 auto 12px; max-width:540px; }
+.top-garland span:nth-child(even) { color:var(--maroon); font-size:18px; }
+.card {
+  position:relative; overflow:hidden; background:var(--paper); border:1px solid var(--line);
+  border-radius:22px; box-shadow:var(--shadow);
+}
+.hero { text-align:center; padding:36px clamp(18px, 6vw, 56px) 40px; }
+.hero:before, .hero:after { content:""; position:absolute; width:170px; height:170px; border:1px solid rgba(183,123,53,.18); border-radius:50%; pointer-events:none; }
+.hero:before { top:-115px; left:-95px; box-shadow:0 0 0 12px rgba(183,123,53,.035),0 0 0 25px rgba(183,123,53,.025); }
+.hero:after { bottom:-125px; right:-100px; box-shadow:0 0 0 12px rgba(183,123,53,.035),0 0 0 25px rgba(183,123,53,.025); }
+.auspicious-mark { width:43px; height:43px; margin:0 auto 16px; border:1px solid var(--gold); border-radius:50%; display:grid; place-items:center; color:var(--maroon); font-size:23px; }
+.eyebrow { margin:0; color:var(--green); text-transform:uppercase; letter-spacing:.19em; font-size:10px; font-weight:700; }
+.intro { margin:20px 0 2px; font-family:"Cormorant Garamond",serif; font-size:21px; }
+h1,h2,.event-kicker { font-family:"Cormorant Garamond",serif; }
+h1 { margin:0; color:var(--maroon); font-size:clamp(39px,8vw,57px); font-weight:600; line-height:1.05; }
+h1 span { color:var(--gold); font-weight:400; }
+.ornament { display:flex; align-items:center; justify-content:center; gap:12px; margin:13px 0; color:var(--gold); font-size:19px; }
+.ornament i { width:55px; height:1px; background:var(--gold-light); }
+.invite-line { margin:18px 0 0; font-size:13px; color:var(--muted); }
+.event-kicker { margin:8px 0 -10px; font-size:22px; color:var(--gold); font-style:italic; }
+.hero h2 { margin:0; color:var(--maroon); font-size:clamp(39px,8vw,55px); font-weight:600; }
+.blessing { max-width:430px; margin:7px auto 0; font-family:"Cormorant Garamond",serif; font-size:20px; line-height:1.35; }
+.cradle-art { width:min(100%,330px); margin:7px auto 0; }
+.cradle-art svg { width:100%; height:auto; display:block; }
+.date-panel { display:flex; justify-content:center; align-items:center; gap:30px; margin:4px auto 26px; padding:19px 12px; max-width:470px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.date-panel > div:not(.date-divider) { display:flex; flex-direction:column; align-items:center; gap:2px; }
+.date-day,.date-month { font-size:9px; font-weight:700; letter-spacing:.16em; color:var(--green); }
+.date-panel strong { color:var(--maroon); font-family:"Cormorant Garamond",serif; font-size:44px; line-height:1; }
+.date-panel .time { font-size:32px; padding:7px 0 5px; }
+.date-divider { width:1px; height:65px; background:var(--line); }
+.countdown-wrap { margin:0 auto 26px; }
+.countdown { display:flex; justify-content:center; gap:clamp(12px,4vw,28px); margin-top:12px; }
+.countdown div { display:flex; flex-direction:column; gap:2px; min-width:48px; }
+.countdown strong { color:var(--maroon); font-family:"Cormorant Garamond",serif; font-size:30px; }
+.countdown span { color:var(--muted); text-transform:uppercase; letter-spacing:.12em; font-size:8px; }
+.venue { padding:20px 12px; background:#fbf5e9; border-radius:15px; max-width:480px; margin:0 auto; }
+.venue-icon { color:var(--gold); font-size:28px; line-height:1; margin-bottom:7px; }
+.address { margin:8px 0; font-family:"Cormorant Garamond",serif; font-size:21px; line-height:1.35; }
+.text-link { color:var(--maroon); font-size:12px; font-weight:700; text-underline-offset:4px; }
+.closing { margin-top:26px; }
+.closing p { max-width:430px; margin:0 auto 12px; font-family:"Cormorant Garamond",serif; font-size:20px; }
+.closing strong,.closing span { display:block; }
+.closing strong { color:var(--muted); font-size:11px; }
+.closing span { margin-top:3px; color:var(--maroon); font-family:"Cormorant Garamond",serif; font-size:25px; }
+
+.rsvp-section { margin-top:22px; padding:32px clamp(18px,5vw,44px); }
+.rsvp-section > .eyebrow,.rsvp-section > h2,.rsvp-section > .section-subtitle { text-align:center; }
+.section-title { margin:5px 0 0; color:var(--maroon); font-size:34px; font-weight:600; }
+.section-subtitle { margin:6px 0 22px; color:var(--muted); font-size:13px; }
+.form-tabs { display:flex; padding:4px; background:#f5ecdf; border-radius:999px; margin:0 auto 22px; width:min(100%,330px); }
+.tab { flex:1; border:0; padding:10px; border-radius:999px; background:transparent; color:var(--muted); font:600 12px "DM Sans",sans-serif; cursor:pointer; }
+.tab.active { background:var(--maroon); color:white; box-shadow:0 3px 10px rgba(109,37,31,.2); }
+form { max-width:500px; margin:0 auto; }
+label { display:block; margin:14px 0 7px; color:var(--ink); font-size:12px; font-weight:700; }
+input,textarea { display:block; width:100%; border:1px solid #e4d6c5; border-radius:10px; padding:12px 13px; background:#fffefa; color:var(--ink); font:14px "DM Sans",sans-serif; outline:none; }
+input:focus,textarea:focus { border-color:var(--gold); box-shadow:0 0 0 3px rgba(183,123,53,.12); }
+.guest-counts { display:grid; grid-template-columns:1fr 1fr; gap:13px; }
+.guest-counts input { text-align:center; font-size:18px; font-weight:700; }
+.total-line { display:flex; justify-content:space-between; align-items:center; margin:15px 0 5px; padding:12px 14px; background:#f8f1e6; border-radius:9px; color:var(--muted); font-size:13px; }
+.total-line strong { color:var(--maroon); font-size:18px; }
+.field-hint,.privacy-note,.music-note { color:var(--muted); font-size:11px; line-height:1.5; }
+.field-hint { margin:7px 0 0; }
+.primary-button,.whatsapp-button,.outline-button,.music-button { display:inline-flex; justify-content:center; align-items:center; text-align:center; text-decoration:none; border-radius:999px; padding:13px 20px; font:700 12px "DM Sans",sans-serif; cursor:pointer; transition:transform .15s, opacity .15s; }
+.primary-button { width:100%; margin-top:19px; border:0; color:white; background:var(--maroon); box-shadow:0 6px 15px rgba(109,37,31,.18); }
+.primary-button:hover,.whatsapp-button:hover,.outline-button:hover,.music-button:hover { transform:translateY(-1px); }
+.primary-button:disabled { opacity:.55; cursor:wait; }
+.form-status { min-height:18px; margin:12px 0 0; text-align:center; color:var(--green); font-size:12px; }
+.form-status.error { color:#a52c26; }
+.confirmation-actions { text-align:center; }
+.confirmation-id { color:var(--maroon); font-size:13px; font-weight:700; }
+.whatsapp-button { color:white; background:#218b54; width:100%; }
+.privacy-note { text-align:center; margin:15px 0 0; }
+.share-section { display:flex; flex-direction:column; align-items:center; gap:11px; padding:25px 10px 5px; }
+.outline-button { border:1px solid var(--maroon); color:var(--maroon); background:transparent; }
+.music-button { border:1px solid var(--line); color:var(--green); background:#fffaf1; }
+.music-note { max-width:400px; text-align:center; margin:0; }
+footer { padding:23px 0 5px; text-align:center; color:var(--muted); font-family:"Cormorant Garamond",serif; font-size:16px; }
+footer span { color:var(--gold); padding-left:5px; }
+[hidden] { display:none !important; }
+@media (max-width:480px) {
+  .page-shell { width:min(100% - 18px,760px); padding-top:12px; }
+  .hero { padding:28px 16px 31px; border-radius:17px; }
+  .date-panel { gap:19px; }
+  .date-panel strong { font-size:39px; }
+  .date-panel .time { font-size:27px; }
+  .countdown { gap:12px; }
+  .countdown div { min-width:43px; }
+  .countdown strong { font-size:27px; }
+  .rsvp-section { padding:27px 17px; }
+}

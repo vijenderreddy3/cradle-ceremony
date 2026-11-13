@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#6d251f">
+  <meta name="description" content="You are warmly invited to celebrate our little one's cradle ceremony.">
+  <title>Cradle Ceremony | Vijender &amp; Mounika</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <div class="top-garland" aria-hidden="true">
+      <span>✦</span><span>❀</span><span>✦</span><span>❀</span><span>✦</span><span>❀</span><span>✦</span>
+    </div>
+
+    <main>
+      <section class="hero card">
+        <div class="auspicious-mark" aria-hidden="true">ॐ</div>
+        <p class="eyebrow">With the blessings of our families</p>
+        <p class="intro">Together with our loved ones,</p>
+        <h1>Vijender <span>&amp;</span> Mounika</h1>
+        <div class="ornament" aria-hidden="true"><i></i> ❀ <i></i></div>
+        <p class="invite-line">cordially invite you to celebrate the</p>
+        <p class="event-kicker">A little one's</p>
+        <h2>Cradle Ceremony</h2>
+        <p class="blessing">A beautiful new beginning, made more special with your presence and blessings.</p>
+
+        <div class="cradle-art" role="img" aria-label="Decorative traditional cradle illustration">
+          <svg viewBox="0 0 320 190" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M92 28 Q160 6 228 28" fill="none" stroke="#b77b35" stroke-width="2"/>
+            <path d="M105 28 L105 64 M215 28 L215 64" stroke="#b77b35" stroke-width="2"/>
+            <path d="M105 64 Q160 94 215 64" fill="none" stroke="#b77b35" stroke-width="2"/>
+            <path d="M92 64 Q160 112 228 64" fill="none" stroke="#8d3429" stroke-width="3"/>
+            <path d="M78 78 Q160 140 242 78 L225 133 Q160 164 95 133 Z" fill="#f2d9a7" stroke="#a96532" stroke-width="2"/>
+            <path d="M95 88 Q160 133 225 88" fill="none" stroke="#a96532" stroke-width="2"/>
+            <path d="M112 112 Q160 142 208 112" fill="none" stroke="#c38c42" stroke-width="2" stroke-dasharray="3 5"/>
+            <path d="M104 134 L86 176 M216 134 L234 176" stroke="#8d3429" stroke-width="4" stroke-linecap="round"/>
+            <path d="M76 177 Q160 188 244 177" fill="none" stroke="#b77b35" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="160" cy="99" r="13" fill="#fff8e9" stroke="#c38c42" stroke-width="1.5"/>
+            <path d="M151 98 Q160 86 169 98 Q160 109 151 98Z" fill="#d79a55"/>
+            <path d="M160 89 L160 109" stroke="#a96532" stroke-width="1"/>
+            <g fill="#b77b35"><circle cx="92" cy="54" r="3"/><circle cx="228" cy="54" r="3"/><circle cx="160" cy="21" r="3"/></g>
+          </svg>
+        </div>
+
+        <div class="date-panel">
+          <div><span class="date-day">SATURDAY</span><strong>21</strong><span class="date-month">NOVEMBER 2026</span></div>
+          <div class="date-divider"></div>
+          <div><span class="date-day">CEREMONY</span><strong class="time">6:00 PM</strong><span class="date-month">PLEASE JOIN US</span></div>
+        </div>
+
+        <div class="countdown-wrap">
+          <p class="eyebrow">The celebration begins in</p>
+          <div class="countdown" id="countdown" aria-live="polite">
+            <div><strong id="days">--</strong><span>Days</span></div>
+            <div><strong id="hours">--</strong><span>Hours</span></div>
+            <div><strong id="minutes">--</strong><span>Minutes</span></div>
+            <div><strong id="seconds">--</strong><span>Seconds</span></div>
+          </div>
+        </div>
+
+        <div class="venue">
+          <div class="venue-icon" aria-hidden="true">⌖</div>
+          <p class="eyebrow">Venue</p>
+          <p class="address">7441 W Buckhorn Trl<br>Peoria, AZ 85383</p>
+          <a class="text-link" href="https://www.google.com/maps/search/?api=1&query=7441%20W%20Buckhorn%20Trl%2C%20Peoria%2C%20AZ%2085383" target="_blank" rel="noopener">Open Google Maps ↗</a>
+        </div>
+
+        <div class="closing">
+          <div class="ornament" aria-hidden="true"><i></i> ❀ <i></i></div>
+          <p>Your presence and blessings will make our celebration truly special.</p>
+          <strong>With love,</strong>
+          <span>Vijender &amp; Mounika</span>
+        </div>
+      </section>
+
+      <section class="rsvp-section card" id="rsvp">
+        <p class="eyebrow">Kindly respond</p>
+        <h2 class="section-title">Répondez, s'il vous plaît</h2>
+        <p class="section-subtitle">Please let us know how many guests will be joining us.</p>
+
+        <div class="form-tabs" role="tablist" aria-label="RSVP action">
+          <button class="tab active" type="button" data-mode="new" role="tab" aria-selected="true">New RSVP</button>
+          <button class="tab" type="button" data-mode="update" role="tab" aria-selected="false">Update RSVP</button>
+        </div>
+
+        <form id="rsvp-form">
+          <input type="hidden" id="form-mode" value="new">
+          <div id="new-fields">
+            <label for="guest-name">Your name</label>
+            <input id="guest-name" name="name" type="text" maxlength="80" autocomplete="name" placeholder="Name of the person submitting" required>
+
+            <label for="guest-phone">WhatsApp / phone number</label>
+            <input id="guest-phone" name="phone" type="tel" maxlength="20" autocomplete="tel" placeholder="Include country code if outside the US" required>
+          </div>
+
+          <div id="update-fields" hidden>
+            <label for="rsvp-id">Your RSVP ID</label>
+            <input id="rsvp-id" name="rsvpId" type="text" maxlength="24" placeholder="Example: CRADLE-A1B2C3">
+            <p class="field-hint">Use the RSVP ID from your confirmation. Enter the same phone number used for your original RSVP below.</p>
+          </div>
+
+          <div id="update-phone-field" hidden>
+            <label for="update-phone">WhatsApp / phone number</label>
+            <input id="update-phone" type="tel" maxlength="20" autocomplete="tel" placeholder="Same number used for original RSVP">
+          </div>
+
+          <div class="guest-counts">
+            <div>
+              <label for="veg-count">Vegetarian guests</label>
+              <input id="veg-count" name="veg" type="number" inputmode="numeric" min="0" max="500" value="0" required>
+            </div>
+            <div>
+              <label for="nonveg-count">Non-vegetarian guests</label>
+              <input id="nonveg-count" name="nonveg" type="number" inputmode="numeric" min="0" max="500" value="0" required>
+            </div>
+          </div>
+          <div class="total-line"><span>Total attendees</span><strong id="total-count">0</strong></div>
+
+          <label for="guest-note">Message (optional)</label>
+          <textarea id="guest-note" name="notes" rows="3" maxlength="500" placeholder="A note or wishes for the family"></textarea>
+
+          <button class="primary-button" id="submit-button" type="submit">Submit RSVP</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          <div class="confirmation-actions" id="confirmation-actions" hidden>
+            <p id="confirmation-id" class="confirmation-id"></p>
+            <a class="whatsapp-button" id="whatsapp-confirm" href="#" target="_blank" rel="noopener">Continue on WhatsApp</a>
+          </div>
+          <p class="privacy-note">Your RSVP details are used only to organize the ceremony and will not be displayed publicly.</p>
+        </form>
+      </section>
+
+      <section class="share-section">
+        <button class="outline-button" id="share-button" type="button">Share invitation on WhatsApp</button>
+        <button class="music-button" id="music-button" type="button" aria-pressed="false">♫ Play celebration music</button>
+        <audio id="background-music" loop preload="none">
+          <source src="assets/ceremony-music.mp3" type="audio/mpeg">
+        </audio>
+        <p class="music-note">Add a royalty-free or personally licensed MP3 as <code>assets/ceremony-music.mp3</code> to enable music.</p>
+      </section>
+    </main>
+    <footer>Made with love for a very special day <span>✦</span></footer>
+  </div>
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
