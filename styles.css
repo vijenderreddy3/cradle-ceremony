@@ -113,3 +113,205 @@ footer span { color:var(--gold); padding-left:5px; }
   .countdown strong { font-size:27px; }
   .rsvp-section { padding:27px 17px; }
 }
+
+/* South Indian traditional visual refresh */
+:root{--maroon:#681d22;--gold:#b98232;--gold-pale:#f0dfb8;--green:#3f6245;--paper:#fffdf7}
+body{background:radial-gradient(ellipse at 5% 5%,rgba(205,159,82,.2),transparent 30%),radial-gradient(ellipse at 95% 95%,rgba(104,29,34,.12),transparent 32%),repeating-linear-gradient(45deg,rgba(181,132,65,.025) 0 1px,transparent 1px 8px),#f2e7d5}
+.card{border:2px solid var(--gold);border-radius:17px;box-shadow:0 22px 65px rgba(67,25,18,.14)}
+.card:before{inset:9px;border:1px solid rgba(183,123,53,.48);border-radius:10px}
+.hero{background:radial-gradient(ellipse at 50% 0%,rgba(228,199,143,.25),transparent 40%),linear-gradient(180deg,#fffdf7,#fff9ed);padding-top:34px}
+.hero:after{content:"";position:absolute;inset:18px;border:1px solid rgba(183,123,53,.2);border-radius:7px;pointer-events:none}
+.temple-arch{position:relative;width:min(100%,390px);margin:0 auto 10px;padding:12px 12px 0;border:2px solid var(--gold);border-bottom:0;border-radius:190px 190px 0 0/125px 125px 0 0}
+.temple-arch:before{content:"";position:absolute;inset:7px 7px 0;border:1px solid var(--gold-pale);border-bottom:0;border-radius:180px 180px 0 0/118px 118px 0 0}
+.arch-kalash{display:block;color:var(--gold);font-size:22px;line-height:1}
+.arch-leaves{display:block;margin:2px auto 0;color:var(--green);font-size:19px;letter-spacing:5px;white-space:nowrap}
+.auspicious-mark{position:relative;z-index:1;width:48px;height:48px;margin:4px auto 0;border:1.5px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--maroon);background:#fff9ed;font-size:25px}
+.top-garland{color:var(--green);font-size:27px;letter-spacing:5px}
+.top-garland span:nth-child(even){color:var(--gold)}
+h1,.hero h2,.section-title{color:var(--maroon)}
+.hero h2{font-size:clamp(42px,8vw,58px);line-height:.98}
+.event-kicker{color:var(--gold);font-size:19px}
+.blessing{font-size:22px;color:#725348}
+.ornament{color:var(--gold)}
+.date-panel{border-color:rgba(168,112,42,.42)}
+.date-panel:before,.date-panel:after{color:var(--gold)}
+.date-day,.date-month,.eyebrow{color:var(--green)}
+.venue{background:linear-gradient(135deg,#f8efd9,#fff9eb);border:1px solid var(--gold-pale);box-shadow:inset 0 0 0 4px rgba(255,255,255,.45)}
+.address{font-size:23px;color:#634337}
+.rsvp-section{padding-top:34px;padding-bottom:34px}
+.section-title{font-size:39px}
+.form-tabs{background:#f1e5d1;border:1px solid #e6d2ad}
+.tab.active,.primary-button{background:var(--maroon)}
+input,textarea{border-color:#dfcba9}
+.total-line{background:#f6eddd;border:1px solid #ead9ba}
+.share-section{padding-top:24px}
+@media(max-width:480px){.temple-arch{width:min(100%,320px)}.arch-leaves{font-size:16px;letter-spacing:3px}.section-title{font-size:35px}}
+
+
+/* Modern botanical invitation refresh — replaces temple-inspired styling */
+:root{
+  --maroon:#754b4b;
+  --gold:#b78b75;
+  --gold-pale:#eadbd2;
+  --green:#718477;
+  --paper:#fffefa;
+  --ink:#514443;
+  --muted:#8b7771;
+  --line:rgba(174,137,120,.34);
+  --shadow:0 22px 60px rgba(87,65,58,.10);
+}
+body{
+  color:var(--ink);
+  background:
+    radial-gradient(ellipse at 0% 0%,rgba(213,190,177,.32),transparent 34%),
+    radial-gradient(ellipse at 100% 100%,rgba(183,199,181,.30),transparent 35%),
+    #f6f1eb;
+}
+.page-shell{max-width:760px}
+.card{
+  border:1px solid #dfc9bd;
+  border-radius:24px;
+  background:rgba(255,254,250,.97);
+  box-shadow:var(--shadow);
+}
+.card:before{
+  inset:10px;
+  border:1px solid rgba(190,157,140,.36);
+  border-radius:17px;
+}
+.hero{
+  padding-top:34px;
+  background:
+    radial-gradient(ellipse at 50% 0%,rgba(232,215,204,.36),transparent 43%),
+    linear-gradient(180deg,#fffefa 0%,#fffaf5 100%);
+}
+.hero:after{
+  content:"";
+  position:absolute;
+  inset:19px;
+  border:1px solid rgba(190,157,140,.20);
+  border-radius:15px;
+  pointer-events:none;
+}
+.floral-ribbon{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:clamp(14px,4vw,30px);
+  margin:0 auto 18px;
+  color:#9aa995;
+  font-size:25px;
+}
+.floral-ribbon span:nth-child(2),
+.floral-ribbon span:nth-child(4){color:#c99d91;font-size:19px}
+.floral-ribbon span:nth-child(3){color:#d6b9a8;font-size:28px}
+.modern-emblem{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:15px;
+  margin:0 auto 13px;
+}
+.modern-emblem .auspicious-mark{
+  width:46px;height:46px;
+  border:1px solid #c9a99a;
+  border-radius:50%;
+  color:#875f5b;
+  background:#fffaf5;
+  font-size:23px;
+}
+.emblem-flower{color:#9aaa96;font-size:22px}
+.eyebrow{color:#819083;letter-spacing:.18em}
+h1,.hero h2,.section-title{color:#754b4b}
+h1{font-weight:500;letter-spacing:-.02em}
+.hero h2{font-size:clamp(40px,7vw,55px);font-weight:500;line-height:1.02}
+.event-kicker{color:#a47c70;font-size:18px}
+.ornament{color:#b78b75}
+.ornament i{background:linear-gradient(90deg,transparent,#c7a99a)}
+.blessing{
+  color:#806c66;
+  max-width:470px;
+  font-size:21px;
+}
+.cradle-art:before,.cradle-art:after{
+  border-color:#c5a394;
+  opacity:.42;
+}
+.date-panel{border-color:rgba(174,137,120,.34)}
+.date-panel:before,.date-panel:after{color:#b78b75}
+.date-day,.date-month{color:#819083}
+.date-panel strong,.countdown strong{color:#754b4b}
+.venue{
+  background:linear-gradient(135deg,#f7f2eb,#f4f5ef);
+  border:1px solid #e3d8ce;
+  border-radius:17px;
+  box-shadow:none;
+}
+.venue-icon{color:#a98578}
+.address{color:#665653}
+.text-link{color:#805b57}
+.closing span{color:#754b4b}
+.rsvp-section{
+  background:linear-gradient(180deg,#fffefa,#fffaf6);
+}
+.section-title{font-weight:500}
+.form-tabs{
+  background:#f1eae4;
+  border:1px solid #e4d6cc;
+}
+.tab{color:#806f69}
+.tab.active{
+  background:#805451;
+  box-shadow:0 3px 10px rgba(117,75,75,.16);
+}
+input,textarea{
+  border-color:#e2d4ca;
+  background:#fffefa;
+  border-radius:11px;
+}
+input:focus,textarea:focus{
+  border-color:#b78b75;
+  box-shadow:0 0 0 3px rgba(183,139,117,.12);
+}
+.total-line{
+  background:#f5f0e9;
+  border:1px solid #e9ded4;
+  border-radius:11px;
+}
+.total-line strong{color:#754b4b}
+.primary-button{
+  background:#805451;
+  box-shadow:0 6px 15px rgba(117,75,75,.14);
+  border-radius:999px;
+}
+.outline-button{
+  border-color:#98706a;
+  color:#805451;
+  background:#fffefa;
+}
+@media(max-width:480px){
+  .hero{padding-top:28px}
+  .floral-ribbon{gap:13px;font-size:22px}
+  .modern-emblem{margin-bottom:12px}
+}
+
+/* Make the cradle the visual centerpiece while keeping the invitation modern */
+.cradle-art {
+  width: min(100%, 420px);
+  margin: 12px auto 8px;
+  padding: 0;
+}
+.cradle-art:before, .cradle-art:after { display: none; }
+.cradle-art svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 8px 8px rgba(110, 79, 68, .08));
+}
+
+/* Final approved visual direction: elegant floral wooden hanging cradle */
+.cradle-art{width:min(100%,500px);margin:10px auto 8px;padding:0}
+.cradle-art:before,.cradle-art:after{display:none}
+.cradle-art svg{display:block;width:100%;height:auto;filter:drop-shadow(0 8px 10px rgba(110,79,68,.09))}
+.hero h2{font-size:clamp(43px,7.5vw,61px);letter-spacing:-.015em}
+.floral-ribbon{margin-bottom:18px}

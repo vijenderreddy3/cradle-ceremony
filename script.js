@@ -185,24 +185,6 @@
     window.open(wa, "_blank", "noopener");
   });
 
-  const music = $("background-music");
-  const musicButton = $("music-button");
-  musicButton.addEventListener("click", async () => {
-    if (music.paused) {
-      try {
-        await music.play();
-        musicButton.textContent = "Ⅱ Pause celebration music";
-        musicButton.setAttribute("aria-pressed", "true");
-      } catch {
-        setStatus("Add your licensed MP3 at assets/ceremony-music.mp3 to enable background music.", true);
-      }
-    } else {
-      music.pause();
-      musicButton.textContent = "♫ Play celebration music";
-      musicButton.setAttribute("aria-pressed", "false");
-    }
-  });
-
   function updateCountdown() {
     const target = new Date(cfg.EVENT_DATE_ISO || "2026-11-21T18:00:00-07:00").getTime();
     let diff = Math.max(0, target - Date.now());
