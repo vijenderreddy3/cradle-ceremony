@@ -1,339 +1,160 @@
- :root {
-  --maroon: #6d251f;
-  --maroon-dark: #4b1917;
-  --gold: #b77b35;
-  --gold-light: #e4c58e;
-  --cream: #fff8ec;
-  --paper: #fffdf8;
-  --ink: #54352c;
-  --muted: #8c7568;
-  --green: #526a46;
-  --line: rgba(183,123,53,.34);
-  --shadow: 0 20px 65px rgba(72,34,20,.12);
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  color: var(--ink);
-  background:
-    radial-gradient(ellipse at 10% 8%, rgba(224,190,128,.24), transparent 32%),
-    radial-gradient(ellipse at 90% 90%, rgba(125,52,37,.09), transparent 35%),
-    #f6eddf;
-  font-family: "DM Sans", sans-serif;
-}
-.page-shell { width: min(100% - 28px, 760px); margin: 0 auto; padding: 22px 0 18px; }
-.top-garland { display:flex; justify-content:space-around; align-items:center; color:var(--gold); font-size:23px; margin:0 auto 12px; max-width:540px; }
-.top-garland span:nth-child(even) { color:var(--maroon); font-size:18px; }
-.card {
-  position:relative; overflow:hidden; background:var(--paper); border:1px solid var(--line);
-  border-radius:22px; box-shadow:var(--shadow);
-}
-.hero { text-align:center; padding:36px clamp(18px, 6vw, 56px) 40px; }
-.hero:before, .hero:after { content:""; position:absolute; width:170px; height:170px; border:1px solid rgba(183,123,53,.18); border-radius:50%; pointer-events:none; }
-.hero:before { top:-115px; left:-95px; box-shadow:0 0 0 12px rgba(183,123,53,.035),0 0 0 25px rgba(183,123,53,.025); }
-.hero:after { bottom:-125px; right:-100px; box-shadow:0 0 0 12px rgba(183,123,53,.035),0 0 0 25px rgba(183,123,53,.025); }
-.auspicious-mark { width:43px; height:43px; margin:0 auto 16px; border:1px solid var(--gold); border-radius:50%; display:grid; place-items:center; color:var(--maroon); font-size:23px; }
-.eyebrow { margin:0; color:var(--green); text-transform:uppercase; letter-spacing:.19em; font-size:10px; font-weight:700; }
-.intro { margin:20px 0 2px; font-family:"Cormorant Garamond",serif; font-size:21px; }
-h1,h2,.event-kicker { font-family:"Cormorant Garamond",serif; }
-h1 { margin:0; color:var(--maroon); font-size:clamp(39px,8vw,57px); font-weight:600; line-height:1.05; }
-h1 span { color:var(--gold); font-weight:400; }
-.ornament { display:flex; align-items:center; justify-content:center; gap:12px; margin:13px 0; color:var(--gold); font-size:19px; }
-.ornament i { width:55px; height:1px; background:var(--gold-light); }
-.invite-line { margin:18px 0 0; font-size:13px; color:var(--muted); }
-.event-kicker { margin:8px 0 -10px; font-size:22px; color:var(--gold); font-style:italic; }
-.hero h2 { margin:0; color:var(--maroon); font-size:clamp(39px,8vw,55px); font-weight:600; }
-.blessing { max-width:430px; margin:7px auto 0; font-family:"Cormorant Garamond",serif; font-size:20px; line-height:1.35; }
-.cradle-art { width:min(100%,330px); margin:7px auto 0; }
-.cradle-art svg { width:100%; height:auto; display:block; }
-.date-panel { display:flex; justify-content:center; align-items:center; gap:30px; margin:4px auto 26px; padding:19px 12px; max-width:470px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
-.date-panel > div:not(.date-divider) { display:flex; flex-direction:column; align-items:center; gap:2px; }
-.date-day,.date-month { font-size:9px; font-weight:700; letter-spacing:.16em; color:var(--green); }
-.date-panel strong { color:var(--maroon); font-family:"Cormorant Garamond",serif; font-size:44px; line-height:1; }
-.date-panel .time { font-size:32px; padding:7px 0 5px; }
-.date-divider { width:1px; height:65px; background:var(--line); }
-.countdown-wrap { margin:0 auto 26px; }
-.countdown { display:flex; justify-content:center; gap:clamp(12px,4vw,28px); margin-top:12px; }
-.countdown div { display:flex; flex-direction:column; gap:2px; min-width:48px; }
-.countdown strong { color:var(--maroon); font-family:"Cormorant Garamond",serif; font-size:30px; }
-.countdown span { color:var(--muted); text-transform:uppercase; letter-spacing:.12em; font-size:8px; }
-.venue { padding:20px 12px; background:#fbf5e9; border-radius:15px; max-width:480px; margin:0 auto; }
-.venue-icon { color:var(--gold); font-size:28px; line-height:1; margin-bottom:7px; }
-.address { margin:8px 0; font-family:"Cormorant Garamond",serif; font-size:21px; line-height:1.35; }
-.text-link { color:var(--maroon); font-size:12px; font-weight:700; text-underline-offset:4px; }
-.closing { margin-top:26px; }
-.closing p { max-width:430px; margin:0 auto 12px; font-family:"Cormorant Garamond",serif; font-size:20px; }
-.closing strong,.closing span { display:block; }
-.closing strong { color:var(--muted); font-size:11px; }
-.closing span { margin-top:3px; color:var(--maroon); font-family:"Cormorant Garamond",serif; font-size:25px; }
-
-.rsvp-section { margin-top:22px; padding:32px clamp(18px,5vw,44px); }
-.rsvp-section > .eyebrow,.rsvp-section > h2,.rsvp-section > .section-subtitle { text-align:center; }
-.section-title { margin:5px 0 0; color:var(--maroon); font-size:34px; font-weight:600; }
-.section-subtitle { margin:6px 0 22px; color:var(--muted); font-size:13px; }
-.form-tabs { display:flex; padding:4px; background:#f5ecdf; border-radius:999px; margin:0 auto 22px; width:min(100%,330px); }
-.tab { flex:1; border:0; padding:10px; border-radius:999px; background:transparent; color:var(--muted); font:600 12px "DM Sans",sans-serif; cursor:pointer; }
-.tab.active { background:var(--maroon); color:white; box-shadow:0 3px 10px rgba(109,37,31,.2); }
-form { max-width:500px; margin:0 auto; }
-label { display:block; margin:14px 0 7px; color:var(--ink); font-size:12px; font-weight:700; }
-input,textarea { display:block; width:100%; border:1px solid #e4d6c5; border-radius:10px; padding:12px 13px; background:#fffefa; color:var(--ink); font:14px "DM Sans",sans-serif; outline:none; }
-input:focus,textarea:focus { border-color:var(--gold); box-shadow:0 0 0 3px rgba(183,123,53,.12); }
-.guest-counts { display:grid; grid-template-columns:1fr 1fr; gap:13px; }
-.guest-counts input { text-align:center; font-size:18px; font-weight:700; }
-.total-line { display:flex; justify-content:space-between; align-items:center; margin:15px 0 5px; padding:12px 14px; background:#f8f1e6; border-radius:9px; color:var(--muted); font-size:13px; }
-.total-line strong { color:var(--maroon); font-size:18px; }
-.field-hint,.privacy-note,.music-note { color:var(--muted); font-size:11px; line-height:1.5; }
-.field-hint { margin:7px 0 0; }
-.primary-button,.whatsapp-button,.outline-button,.music-button { display:inline-flex; justify-content:center; align-items:center; text-align:center; text-decoration:none; border-radius:999px; padding:13px 20px; font:700 12px "DM Sans",sans-serif; cursor:pointer; transition:transform .15s, opacity .15s; }
-.primary-button { width:100%; margin-top:19px; border:0; color:white; background:var(--maroon); box-shadow:0 6px 15px rgba(109,37,31,.18); }
-.primary-button:hover,.whatsapp-button:hover,.outline-button:hover,.music-button:hover { transform:translateY(-1px); }
-.primary-button:disabled { opacity:.55; cursor:wait; }
-.form-status { min-height:18px; margin:12px 0 0; text-align:center; color:var(--green); font-size:12px; }
-.form-status.error { color:#a52c26; }
-.confirmation-actions { text-align:center; }
-.confirmation-id { color:var(--maroon); font-size:13px; font-weight:700; }
-.whatsapp-button { color:white; background:#218b54; width:100%; }
-.privacy-note { text-align:center; margin:15px 0 0; }
-.share-section { display:flex; flex-direction:column; align-items:center; gap:11px; padding:25px 10px 5px; }
-.outline-button { border:1px solid var(--maroon); color:var(--maroon); background:transparent; }
-.music-button { border:1px solid var(--line); color:var(--green); background:#fffaf1; }
-.music-note { max-width:400px; text-align:center; margin:0; }
-footer { padding:23px 0 5px; text-align:center; color:var(--muted); font-family:"Cormorant Garamond",serif; font-size:16px; }
-footer span { color:var(--gold); padding-left:5px; }
-[hidden] { display:none !important; }
-@media (max-width:480px) {
-  .page-shell { width:min(100% - 18px,760px); padding-top:12px; }
-  .hero { padding:28px 16px 31px; border-radius:17px; }
-  .date-panel { gap:19px; }
-  .date-panel strong { font-size:39px; }
-  .date-panel .time { font-size:27px; }
-  .countdown { gap:12px; }
-  .countdown div { min-width:43px; }
-  .countdown strong { font-size:27px; }
-  .rsvp-section { padding:27px 17px; }
-}
-
-/* South Indian traditional visual refresh */
-:root{--maroon:#681d22;--gold:#b98232;--gold-pale:#f0dfb8;--green:#3f6245;--paper:#fffdf7}
-body{background:radial-gradient(ellipse at 5% 5%,rgba(205,159,82,.2),transparent 30%),radial-gradient(ellipse at 95% 95%,rgba(104,29,34,.12),transparent 32%),repeating-linear-gradient(45deg,rgba(181,132,65,.025) 0 1px,transparent 1px 8px),#f2e7d5}
-.card{border:2px solid var(--gold);border-radius:17px;box-shadow:0 22px 65px rgba(67,25,18,.14)}
-.card:before{inset:9px;border:1px solid rgba(183,123,53,.48);border-radius:10px}
-.hero{background:radial-gradient(ellipse at 50% 0%,rgba(228,199,143,.25),transparent 40%),linear-gradient(180deg,#fffdf7,#fff9ed);padding-top:34px}
-.hero:after{content:"";position:absolute;inset:18px;border:1px solid rgba(183,123,53,.2);border-radius:7px;pointer-events:none}
-.temple-arch{position:relative;width:min(100%,390px);margin:0 auto 10px;padding:12px 12px 0;border:2px solid var(--gold);border-bottom:0;border-radius:190px 190px 0 0/125px 125px 0 0}
-.temple-arch:before{content:"";position:absolute;inset:7px 7px 0;border:1px solid var(--gold-pale);border-bottom:0;border-radius:180px 180px 0 0/118px 118px 0 0}
-.arch-kalash{display:block;color:var(--gold);font-size:22px;line-height:1}
-.arch-leaves{display:block;margin:2px auto 0;color:var(--green);font-size:19px;letter-spacing:5px;white-space:nowrap}
-.auspicious-mark{position:relative;z-index:1;width:48px;height:48px;margin:4px auto 0;border:1.5px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--maroon);background:#fff9ed;font-size:25px}
-.top-garland{color:var(--green);font-size:27px;letter-spacing:5px}
-.top-garland span:nth-child(even){color:var(--gold)}
-h1,.hero h2,.section-title{color:var(--maroon)}
-.hero h2{font-size:clamp(42px,8vw,58px);line-height:.98}
-.event-kicker{color:var(--gold);font-size:19px}
-.blessing{font-size:22px;color:#725348}
-.ornament{color:var(--gold)}
-.date-panel{border-color:rgba(168,112,42,.42)}
-.date-panel:before,.date-panel:after{color:var(--gold)}
-.date-day,.date-month,.eyebrow{color:var(--green)}
-.venue{background:linear-gradient(135deg,#f8efd9,#fff9eb);border:1px solid var(--gold-pale);box-shadow:inset 0 0 0 4px rgba(255,255,255,.45)}
-.address{font-size:23px;color:#634337}
-.rsvp-section{padding-top:34px;padding-bottom:34px}
-.section-title{font-size:39px}
-.form-tabs{background:#f1e5d1;border:1px solid #e6d2ad}
-.tab.active,.primary-button{background:var(--maroon)}
-input,textarea{border-color:#dfcba9}
-.total-line{background:#f6eddd;border:1px solid #ead9ba}
-.share-section{padding-top:24px}
-@media(max-width:480px){.temple-arch{width:min(100%,320px)}.arch-leaves{font-size:16px;letter-spacing:3px}.section-title{font-size:35px}}
-
-
-/* Modern botanical invitation refresh — replaces temple-inspired styling */
+*{box-sizing:border-box}
 :root{
-  --maroon:#754b4b;
-  --gold:#b78b75;
-  --gold-pale:#eadbd2;
-  --green:#718477;
-  --paper:#fffefa;
-  --ink:#514443;
-  --muted:#8b7771;
-  --line:rgba(174,137,120,.34);
-  --shadow:0 22px 60px rgba(87,65,58,.10);
+  --maroon:#781d35;
+  --gold:#c28a16;
+  --cream:#fff9f0;
+  --ink:#40242a;
+  --muted:#8a6c65;
+  --sage:#879782;
 }
+html{scroll-behavior:smooth}
 body{
+  margin:0;
+  padding:22px 14px 48px;
   color:var(--ink);
   background:
-    radial-gradient(ellipse at 0% 0%,rgba(213,190,177,.32),transparent 34%),
-    radial-gradient(ellipse at 100% 100%,rgba(183,199,181,.30),transparent 35%),
-    #f6f1eb;
+    radial-gradient(ellipse at 10% 8%,rgba(229,198,181,.34),transparent 34%),
+    radial-gradient(ellipse at 92% 88%,rgba(225,205,183,.28),transparent 36%),
+    #f6f0e9;
+  font-family:"DM Sans",Arial,sans-serif;
 }
-.page-shell{max-width:760px}
-.card{
-  border:1px solid #dfc9bd;
-  border-radius:24px;
-  background:rgba(255,254,250,.97);
-  box-shadow:var(--shadow);
+.page-shell{width:min(100%,790px);margin:0 auto}
+main{display:flex;flex-direction:column;align-items:center;gap:22px}
+.invitation-poster{
+  position:relative;
+  width:100%;
+  max-width:690px;
+  margin:0 auto;
+  overflow:hidden;
+  background:#fff8ef;
+  border-radius:4px;
+  box-shadow:0 18px 48px rgba(85,55,39,.16);
+  line-height:0;
 }
-.card:before{
-  inset:10px;
-  border:1px solid rgba(190,157,140,.36);
-  border-radius:17px;
-}
-.hero{
-  padding-top:34px;
-  background:
-    radial-gradient(ellipse at 50% 0%,rgba(232,215,204,.36),transparent 43%),
-    linear-gradient(180deg,#fffefa 0%,#fffaf5 100%);
-}
-.hero:after{
-  content:"";
-  position:absolute;
-  inset:19px;
-  border:1px solid rgba(190,157,140,.20);
-  border-radius:15px;
-  pointer-events:none;
-}
-.floral-ribbon{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:clamp(14px,4vw,30px);
-  margin:0 auto 18px;
-  color:#9aa995;
-  font-size:25px;
-}
-.floral-ribbon span:nth-child(2),
-.floral-ribbon span:nth-child(4){color:#c99d91;font-size:19px}
-.floral-ribbon span:nth-child(3){color:#d6b9a8;font-size:28px}
-.modern-emblem{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:15px;
-  margin:0 auto 13px;
-}
-.modern-emblem .auspicious-mark{
-  width:46px;height:46px;
-  border:1px solid #c9a99a;
-  border-radius:50%;
-  color:#875f5b;
-  background:#fffaf5;
-  font-size:23px;
-}
-.emblem-flower{color:#9aaa96;font-size:22px}
-.eyebrow{color:#819083;letter-spacing:.18em}
-h1,.hero h2,.section-title{color:#754b4b}
-h1{font-weight:500;letter-spacing:-.02em}
-.hero h2{font-size:clamp(40px,7vw,55px);font-weight:500;line-height:1.02}
-.event-kicker{color:#a47c70;font-size:18px}
-.ornament{color:#b78b75}
-.ornament i{background:linear-gradient(90deg,transparent,#c7a99a)}
-.blessing{
-  color:#806c66;
-  max-width:470px;
-  font-size:21px;
-}
-.cradle-art:before,.cradle-art:after{
-  border-color:#c5a394;
-  opacity:.42;
-}
-.date-panel{border-color:rgba(174,137,120,.34)}
-.date-panel:before,.date-panel:after{color:#b78b75}
-.date-day,.date-month{color:#819083}
-.date-panel strong,.countdown strong{color:#754b4b}
-.venue{
-  background:linear-gradient(135deg,#f7f2eb,#f4f5ef);
-  border:1px solid #e3d8ce;
-  border-radius:17px;
-  box-shadow:none;
-}
-.venue-icon{color:#a98578}
-.address{color:#665653}
-.text-link{color:#805b57}
-.closing span{color:#754b4b}
-.rsvp-section{
-  background:linear-gradient(180deg,#fffefa,#fffaf6);
-}
-.section-title{font-weight:500}
-.form-tabs{
-  background:#f1eae4;
-  border:1px solid #e4d6cc;
-}
-.tab{color:#806f69}
-.tab.active{
-  background:#805451;
-  box-shadow:0 3px 10px rgba(117,75,75,.16);
-}
-input,textarea{
-  border-color:#e2d4ca;
-  background:#fffefa;
-  border-radius:11px;
-}
-input:focus,textarea:focus{
-  border-color:#b78b75;
-  box-shadow:0 0 0 3px rgba(183,139,117,.12);
-}
-.total-line{
-  background:#f5f0e9;
-  border:1px solid #e9ded4;
-  border-radius:11px;
-}
-.total-line strong{color:#754b4b}
-.primary-button{
-  background:#805451;
-  box-shadow:0 6px 15px rgba(117,75,75,.14);
-  border-radius:999px;
-}
-.outline-button{
-  border-color:#98706a;
-  color:#805451;
-  background:#fffefa;
-}
-@media(max-width:480px){
-  .hero{padding-top:28px}
-  .floral-ribbon{gap:13px;font-size:22px}
-  .modern-emblem{margin-bottom:12px}
-}
-
-/* Make the cradle the visual centerpiece while keeping the invitation modern */
-.cradle-art {
-  width: min(100%, 420px);
-  margin: 12px auto 8px;
-  padding: 0;
-}
-.cradle-art:before, .cradle-art:after { display: none; }
-.cradle-art svg {
-  width: 100%;
-  height: auto;
-  display: block;
-  filter: drop-shadow(0 8px 8px rgba(110, 79, 68, .08));
-}
-
-/* Final approved visual direction: elegant floral wooden hanging cradle */
-.cradle-art{width:min(100%,500px);margin:10px auto 8px;padding:0}
-.cradle-art:before,.cradle-art:after{display:none}
-.cradle-art svg{display:block;width:100%;height:auto;filter:drop-shadow(0 8px 10px rgba(110,79,68,.09))}
-.hero h2{font-size:clamp(43px,7.5vw,61px);letter-spacing:-.015em}
-.floral-ribbon{margin-bottom:18px}
-
-/* Fixes for the deployed layout */
-.hero:before { content:none !important; display:none !important; }
-.hero:after {
-  content:"";
-  position:absolute;
-  inset:19px;
-  width:auto;
+.invitation-poster img{
+  display:block;
+  width:100%;
   height:auto;
-  border:1px solid rgba(190,157,140,.20);
-  border-radius:15px;
-  box-shadow:none;
-  pointer-events:none;
 }
-.floral-ribbon {
+.map-hotspot{
+  position:absolute;
+  left:37.6%;
+  top:80.25%;
+  width:24.8%;
+  height:2.85%;
+  display:block;
+  border-radius:999px;
+  background:transparent;
+  cursor:pointer;
+}
+.map-hotspot:focus-visible{
+  outline:3px solid #781d35;
+  outline-offset:3px;
+}
+.countdown-card{
+  width:min(100%,690px);
+  padding:20px 14px 18px;
+  text-align:center;
+  background:rgba(255,252,247,.94);
+  border:1px solid rgba(194,138,22,.35);
+  border-radius:14px;
+  box-shadow:0 8px 24px rgba(85,55,39,.07);
+}
+.eyebrow{
+  margin:0;
+  color:#7b8978;
+  text-transform:uppercase;
+  letter-spacing:.19em;
+  font-size:10px;
+  font-weight:700;
+}
+.countdown{
+  display:flex;
   justify-content:center;
-  gap:18px;
-  margin:0 auto 16px;
-  min-height:24px;
+  flex-wrap:wrap;
+  gap:clamp(16px,5vw,38px);
+  margin-top:12px;
 }
-.event-kicker { margin:8px 0 -4px; }
-.cradle-art { width:min(100%,500px); margin:12px auto 8px; }
+.countdown div{display:flex;min-width:48px;flex-direction:column;gap:3px}
+.countdown strong{
+  color:var(--maroon);
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:30px;
+  line-height:1;
+}
+.countdown span{
+  color:var(--muted);
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+}
+.rsvp-section{
+  width:min(100%,690px);
+  padding:34px clamp(18px,5vw,48px);
+  background:#fffdf9;
+  border:1px solid #e6d4c5;
+  border-radius:18px;
+  box-shadow:0 14px 38px rgba(85,55,39,.10);
+}
+.rsvp-section>.eyebrow,.rsvp-section>h2,.rsvp-section>.section-subtitle{text-align:center}
+.section-title{
+  margin:7px 0 0;
+  color:var(--maroon);
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:40px;
+  font-weight:500;
+}
+.section-subtitle{margin:8px 0 24px;color:var(--muted);font-size:13px}
+.form-tabs{
+  display:flex;width:min(100%,350px);margin:0 auto 22px;padding:4px;
+  background:#f4e9df;border:1px solid #ead8c9;border-radius:999px;
+}
+.tab{
+  flex:1;padding:11px;border:0;border-radius:999px;background:transparent;
+  color:#806e67;font:600 12px "DM Sans",Arial,sans-serif;cursor:pointer;
+}
+.tab.active{background:var(--maroon);color:#fff;box-shadow:0 3px 10px rgba(120,29,53,.18)}
+form{max-width:520px;margin:0 auto}
+label{display:block;margin:14px 0 7px;color:#503d39;font-size:12px;font-weight:700}
+input,textarea{
+  display:block;width:100%;padding:13px 14px;border:1px solid #e1d1c4;border-radius:9px;
+  background:#fffefa;color:#40242a;font:14px "DM Sans",Arial,sans-serif;outline:none;
+}
+input:focus,textarea:focus{border-color:#c28a16;box-shadow:0 0 0 3px rgba(194,138,22,.12)}
+.guest-counts{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.guest-counts input{text-align:center;font-size:18px;font-weight:700}
+.total-line{
+  display:flex;justify-content:space-between;align-items:center;margin:15px 0 5px;padding:13px 15px;
+  background:#f8f0e6;border:1px solid #eadbca;border-radius:9px;color:#806e67;font-size:13px;
+}
+.total-line strong{color:var(--maroon);font-size:18px}
+.field-hint,.privacy-note{color:#806e67;font-size:11px;line-height:1.5}
+.field-hint{margin:7px 0 0}
+.primary-button,.whatsapp-button,.outline-button{
+  display:inline-flex;justify-content:center;align-items:center;text-align:center;text-decoration:none;
+  border-radius:999px;padding:14px 21px;font:700 12px "DM Sans",Arial,sans-serif;cursor:pointer;
+}
+.primary-button{
+  width:100%;margin-top:19px;padding:15px;border:0;color:#fff;background:var(--maroon);
+  box-shadow:0 6px 15px rgba(120,29,53,.16);
+}
+.primary-button:disabled{opacity:.55;cursor:wait}
+.form-status{min-height:18px;margin:12px 0 0;text-align:center;color:#456b4a;font-size:12px}
+.form-status.error{color:#a52c26}
+.confirmation-actions{text-align:center}
+.confirmation-id{color:var(--maroon);font-size:13px;font-weight:700}
+.whatsapp-button{width:100%;color:#fff;background:#218b54}
+.privacy-note{text-align:center;margin:15px 0 0}
+.outline-button{min-width:245px;border:1px solid var(--maroon);color:var(--maroon);background:#fffefa}
+.share-section{display:flex;flex-direction:column;align-items:center;gap:11px;padding:24px 10px 0}
+[hidden]{display:none!important}
+@media(max-width:520px){
+  body{padding:8px 7px 30px}
+  main{gap:15px}
+  .invitation-poster{border-radius:2px}
+  .countdown-card{padding:17px 8px}
+  .countdown{gap:15px}
+  .countdown strong{font-size:26px}
+  .rsvp-section{padding:28px 16px}
+  .section-title{font-size:35px}
+}

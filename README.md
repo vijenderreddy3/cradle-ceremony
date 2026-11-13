@@ -11,7 +11,7 @@ A mobile-friendly, South Indian traditional-style invitation for the cradle cere
 - Google Sheets storage through Google Apps Script
 - RSVP updates using RSVP ID + original phone number
 - WhatsApp invitation sharing and host notification link
-- Optional background music (add your own licensed MP3)
+- Modern botanical design with soft floral details and a contemporary palette
 - Private Google Sheets dashboard with catering totals
 
 ## Event details already configured
@@ -67,15 +67,7 @@ HOST_WHATSAPP: "REPLACE_WITH_YOUR_WHATSAPP_NUMBER",
 
 The phone number is used to build a WhatsApp message link. The website does not send WhatsApp messages automatically; the guest must tap the WhatsApp button and press Send.
 
-## Part D — Add optional background music
-
-Add an MP3 that you own or are licensed to use at:
-
-`assets/ceremony-music.mp3`
-
-The player is user-controlled; music does not autoplay. Do not add copyrighted music unless you have permission to use it.
-
-## Part E — Publish using GitHub Pages
+## Part D — Publish using GitHub Pages
 
 1. Create a new **public** GitHub repository, for example `cradle-ceremony`.
 2. Upload all project files and the `assets` folder, preserving the folder structure:
@@ -94,7 +86,7 @@ The player is user-controlled; music does not autoplay. Do not add copyrighted m
 
 You can also test the site locally by opening `index.html`, but the Google Apps Script integration should be tested from the deployed HTTPS GitHub Pages URL.
 
-## Part F — Test before sharing
+## Part E — Test before sharing
 
 Use a test RSVP first, with a phone number you control.
 
@@ -138,5 +130,10 @@ Delete your test row before sharing the invitation publicly.
 **WhatsApp button doesn't open the correct chat**
 - Check `HOST_WHATSAPP` in `config.js`; use country code + number, digits only.
 
-**Music doesn't play**
-- Add `assets/ceremony-music.mp3`. Browsers require a user click before playback.
+
+
+## Exact invitation artwork
+
+The approved invitation artwork is stored at `assets/invitation-poster.png` and is displayed as a responsive portrait card. The Google Maps button is an invisible accessible link layered over the printed button in the artwork. Keep the image file in the `assets` folder when uploading to GitHub.
+
+The countdown and RSVP form are live HTML sections below the poster. The RSVP form continues to use the existing `config.js`, `script.js`, and Apps Script backend.
