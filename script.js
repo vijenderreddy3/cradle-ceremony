@@ -10,6 +10,8 @@
   const whatsappConfirm = $("whatsapp-confirm");
   const vegInput = $("veg-count");
   const nonvegInput = $("nonveg-count");
+  const attendanceInput = $("attendance-status");
+  const guestCountSection = $("guest-count-section");
   let currentMode = "new";
 
   function setStatus(message, isError = false) {
@@ -29,6 +31,19 @@
   }
   vegInput.addEventListener("input", updateTotal);
   nonvegInput.addEventListener("input", updateTotal);
+
+  function updateAttendanceFields() {
+    const declined = attendanceInput.value === "No";
+    guestCountSection.hidden = declined;
+    vegInput.required = !declined;
+    nonvegInput.required = !declined;
+    if (declined) {
+      vegInput.value = "0";
+      nonvegInput.value = "0";
+      updateTotal();
+    }
+  }
+  attendanceInput.addEventListener("change", updateAttendanceFields);
 
   document.querySelectorAll(".tab").forEach((tab) => {
     tab.addEventListener("click", () => {
@@ -95,14 +110,19 @@
     confirmationActions.hidden = true;
     setStatus("");
 
-    if (!validCount(vegInput) || !validCount(nonvegInput)) {
+    const attendance = attendanceInput.value;
+    if (!["Yes", "No", "Tentative"].includes(attendance)) {
+      setStatus("Please select Yes, No, or Tentative.", true);
+      return;
+    }
+    if (attendance !== "No" && (!validCount(vegInput) || !validCount(nonvegInput))) {
       setStatus("Please enter whole numbers from 0 to 500 for each meal preference.", true);
       return;
     }
-    const veg = Number(vegInput.value);
-    const nonveg = Number(nonvegInput.value);
-    if (veg + nonveg < 1) {
-      setStatus("Please enter at least one attendee.", true);
+    const veg = attendance === "No" ? 0 : Number(vegInput.value);
+    const nonveg = attendance === "No" ? 0 : Number(nonvegInput.value);
+    if (attendance !== "No" && veg + nonveg < 1) {
+      setStatus("Please enter at least one expected attendee. For Tentative, enter your best estimate.", true);
       return;
     }
 
@@ -123,6 +143,7 @@
         rsvpId: id,
         name,
         phone,
+        attendance,
         veg: String(veg),
         nonveg: String(nonveg),
         notes: $("guest-note").value.trim()
@@ -140,6 +161,7 @@
         rsvpId: id,
         phone,
         name,
+        attendance,
         veg: String(veg),
         nonveg: String(nonveg),
         notes: $("guest-note").value.trim()
@@ -155,8 +177,8 @@
         : "Your update request has been sent. Please use WhatsApp below to notify the hosts.");
       confirmationId.textContent = `Your RSVP ID: ${id} — please save this for future updates.`;
       const message = currentMode === "new"
-        ? `Hello Vijender & Mounika! I have submitted my cradle ceremony RSVP.\nName: ${name}\nRSVP ID: ${id}\nVegetarian guests: ${veg}\nNon-vegetarian guests: ${nonveg}\nTotal guests: ${veg + nonveg}\nPhone: ${phone}`
-        : `Hello Vijender & Mounika! I have updated my cradle ceremony RSVP.\nRSVP ID: ${id}\nVegetarian guests: ${veg}\nNon-vegetarian guests: ${nonveg}\nTotal guests: ${veg + nonveg}\nPhone: ${phone}`;
+        ? `Hello Vijender & Mounika! I have submitted my cradle ceremony RSVP.\nName: ${name}\nRSVP ID: ${id}\nAttendance: ${attendance}\nVegetarian guests: ${veg}\nNon-vegetarian guests: ${nonveg}\nExpected total: ${veg + nonveg}\nPhone: ${phone}`
+        : `Hello Vijender & Mounika! I have updated my cradle ceremony RSVP.\nRSVP ID: ${id}\nAttendance: ${attendance}\nVegetarian guests: ${veg}\nNon-vegetarian guests: ${nonveg}\nExpected total: ${veg + nonveg}\nPhone: ${phone}`;
       const wa = whatsappUrl(message);
       if (wa) {
         whatsappConfirm.href = wa;

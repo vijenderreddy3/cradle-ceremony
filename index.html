@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261113-clean1">
+  <link rel="stylesheet" href="styles.css?v=20261114-rsvpstatus1">
 </head>
 <body>
   <div class="page-shell">
@@ -75,17 +75,27 @@
             <input id="update-phone" type="tel" maxlength="20" autocomplete="tel" placeholder="Same number used for original RSVP">
           </div>
 
-          <div class="guest-counts">
-            <div>
-              <label for="veg-count">Vegetarian guests</label>
-              <input id="veg-count" name="veg" type="number" inputmode="numeric" min="0" max="500" value="0" required>
+          <label for="attendance-status">Will you be attending?</label>
+          <select id="attendance-status" name="attendance" required>
+            <option value="Yes" selected>Yes, we will attend</option>
+            <option value="No">No, we can't make it</option>
+            <option value="Tentative">Tentative — not sure yet</option>
+          </select>
+
+          <div id="guest-count-section">
+            <div class="guest-counts">
+              <div>
+                <label for="veg-count">Vegetarian guests</label>
+                <input id="veg-count" name="veg" type="number" inputmode="numeric" min="0" max="500" value="0" required>
+              </div>
+              <div>
+                <label for="nonveg-count">Non-vegetarian guests</label>
+                <input id="nonveg-count" name="nonveg" type="number" inputmode="numeric" min="0" max="500" value="0" required>
+              </div>
             </div>
-            <div>
-              <label for="nonveg-count">Non-vegetarian guests</label>
-              <input id="nonveg-count" name="nonveg" type="number" inputmode="numeric" min="0" max="500" value="0" required>
-            </div>
+            <div class="total-line"><span>Expected attendees</span><strong id="total-count">0</strong></div>
+            <p class="field-hint" id="attendance-hint">For Tentative, please enter your expected guest count if known.</p>
           </div>
-          <div class="total-line"><span>Total attendees</span><strong id="total-count">0</strong></div>
 
           <label for="guest-note">Message (optional)</label>
           <textarea id="guest-note" name="notes" rows="3" maxlength="500" placeholder="A note or wishes for the family"></textarea>
@@ -102,6 +112,6 @@
 </main>
   </div>
   <script src="config.js"></script>
-  <script src="script.js?v=20261113-noshare1"></script>
+  <script src="script.js?v=20261114-rsvpstatus1"></script>
 </body>
 </html>
